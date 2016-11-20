@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -6,21 +8,52 @@
         <title>Treasure Gram</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700,700i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <h1>TreasureGram</h1>
-        {% for treasure in treasures %}
-            <p>{{ treasure.name }}</p>
-            {% if treasure.value > 0 %}
-                <p>{{ treasure.value }}</p>
-            {% else %}
-                <p>Unknown</p>
-            {% endif %}
-            <hr>
-        {% endfor %}
+        <main role="main" class="site-main">
+            <nav class="site-navigation">
+                <a href="/">
+                  <img src="{% static 'images/logo.jpg' %}" alt="TreasureGram logo">
+                </a>
+            </nav>
+
+            <h1 class="site-title">TreasureGram</h1>
+            <div class="panel">
+            {% for treasure in treasures %}
+                <h2 class="panel-heading">{{ treasure.name }}</h2>
+                <div class="panel-body">
+                    <table class="treasure-table">
+                        <tr>
+                            <th><svg width="1" height="1"></svg> Material: </th>
+                            <td>{{ treasure.material }}</td>
+                        </tr>
+                        <tr>
+                            <th><svg width="1" height="1"></svg> Value: </th>
+                            <td>
+                              {% if treasure.value > 0 %}
+                              {{ treasure.value }}
+                              {% else %}
+                              Unknown
+                              {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                          <th><svg width="1" height="1"></svg> Location: </th>
+                          <td>{{ treasure.location }}</td>
+                        </tr>
+                    </table>
+                </div>
+            {% endfor %}
+            </div>
+        </main>
     </body>
 </html>
