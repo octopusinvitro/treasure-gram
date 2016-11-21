@@ -33,11 +33,11 @@
                 <div class="panel-body">
                     <table class="treasure-table">
                         <tr>
-                            <th><svg width="1" height="1"></svg> Material: </th>
+                            <th><svg aria-hidden="true" class="treasure-icon"><use xlink:href="{% static 'images/site-icons.svg' %}#icon-material"></use></svg> Material: </th>
                             <td>{{ treasure.material }}</td>
                         </tr>
                         <tr>
-                            <th><svg width="1" height="1"></svg> Value: </th>
+                            <th><svg aria-hidden="true" class="treasure-icon"><use xlink:href="{% static 'images/site-icons.svg' %}#icon-value"></use></svg> Value: </th>
                             <td>
                               {% if treasure.value > 0 %}
                               {{ treasure.value }}
@@ -47,8 +47,8 @@
                             </td>
                         </tr>
                         <tr>
-                          <th><svg width="1" height="1"></svg> Location: </th>
-                          <td>{{ treasure.location }}</td>
+                            <th><svg aria-hidden="true" class="treasure-icon"><use xlink:href="{% static 'images/site-icons.svg' %}#icon-location"></use></svg> Location: </th>
+                            <td>{{ treasure.location }}</td>
                         </tr>
                     </table>
                 </div>
