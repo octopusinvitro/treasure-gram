@@ -100,8 +100,13 @@ body {
   font-family: 'Gentium Basic', serif;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .site-main {
-  max-width: 35em;
+  max-width: 45em;
   margin: 1em auto;
   padding-bottom: 1em;
   background-color: #EEDCBC;
@@ -144,29 +149,36 @@ body {
   border-radius: .5em .5em 0 0;
 }
 
-.panel-body {
-  padding: 0 2em;
-}
-
 .panel-body:last-of-type {
   padding-bottom: 1em;
 }
 
-.treasure-table tr {
+.treasure-image,
+.treasure-table {
+  box-sizing: border-box;
   display: block;
+}
+
+.treasure-image {
+  margin:  1em auto;
+  padding: 1em;
+  background-color: #F8F1D8;
+}
+
+.treasure-table tr {
+  margin: auto;
   padding: .5em 0;
   border-bottom: .1em solid #F1E9D7;
 }
 
 .treasure-table th,
 .treasure-table td {
-  display: inline-block;
   text-align: left;
+  padding: .5em 1em;
 }
 
 .treasure-table th {
   width: 8em;
-  padding: 0 1em;
   font-weight: 700;
   color: #DBC4A9;
 }
@@ -265,7 +277,20 @@ body {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+  .panel-body {
+    display: flex;
+    align-items: center;
+    padding: 0 2em;
+  }
+
+  .treasure-image {
+    box-sizing: content-box;
+  }
+
+  .treasure-image,
+  .treasure-table {
+    display: inline-block;
+  }
 }
 
 @media print,
