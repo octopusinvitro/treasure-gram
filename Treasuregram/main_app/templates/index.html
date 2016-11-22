@@ -31,10 +31,10 @@
                 <h1 class="site-title">TreasureGram</h1>
                 <div class="treasure-row">
                 {% for treasure in treasures %}
-                    <div class="treasure-item">
+                    <a class="treasure-item" href="/{{ treasure.id }}/">
                         <h2 class="panel-heading">{{ treasure.name }}</h2>
                         <img class="treasure-image" src="{{ treasure.img_url }}" width="150" height="150">
-                    </div>
+                    </a>
                 {% if forloop.counter|divisibleby:3 %}
                 </div>
 
