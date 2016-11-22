@@ -140,10 +140,32 @@ img {
   box-shadow: 0px 0px 4px 3px rgba(0,0,0,0.1);
 }
 
-a.treasure-item {
-  display: inline-block;
+.treasure-user {
+  display: block;
+  padding: .5em 0;
+  color: #DBC4A9;
+  font-size: .8em;
+  font-weight: bold;
+  text-transform: uppercase;
   text-decoration: none;
-  color: inherit;
+  letter-spacing: .3em;
+}
+
+.user-header {
+  padding: 1em;
+  text-align: center;
+  background-color: #FDF5E3;
+  box-shadow: 0px 0px 4px 3px rgba(0,0,0,0.1);
+}
+
+.user-header h1,
+.user-header h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.user-header h2 {
+  margin-top: 0;
 }
 
 .panel {

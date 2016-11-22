@@ -3,7 +3,14 @@
 
 {% block content %}
 
+            <header class="user-header">
+                <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+                <h2>@{{ user.username }}</h2>
+            </header>
+
             <div class="treasure-grid">
+
+                <h3>User treasures:</h3>
                 <div class="treasure-row">
                 {% for treasure in treasures %}
                     <div class="treasure-item">
@@ -11,7 +18,6 @@
                         <a href="/{{ treasure.id }}/">
                             <img class="treasure-image" src="{{ treasure.image.url }}" width="150" height="150">
                         </a>
-                        <a class="treasure-user" href="/user/{{ treasure.user.username }}">by: {{ treasure.user.username }}</a>
                     </div>
                 {% if forloop.counter|divisibleby:3 %}
                 </div>
@@ -20,6 +26,5 @@
                 {% endif %}
                 {% endfor %}
                 </div>
-                <a class="treasure-button add-more" href="/add/">Add a new treasure!</a>
             </div>
 {% endblock %}

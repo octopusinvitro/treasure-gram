@@ -23,3 +23,9 @@ def post_treasure(request):
         treasure.user = request.user
         treasure.save()
     return HttpResponseRedirect('/')
+
+def profile(request, username):
+    user = User.objects.get(username=username)
+    treasures = Treasure.objects.filter(user=user)
+    return render(request, 'profile.html', {
+        'user': user, 'treasures': treasures})
