@@ -6,7 +6,7 @@
             <div class="panel">
                 <h2 class="panel-heading">{{ treasure.name }}</h2>
                 <div class="panel-body">
-                    <img class="treasure-image" src="{{ treasure.img_url }}" width="300" height="300">
+                    <img class="treasure-image" src="{{ treasure.image.url }}" width="300" height="300">
                     <table class="treasure-table">
                         <tr>
                             <th><svg aria-hidden="true" class="treasure-icon"><use xlink:href="{% static 'images/site-icons.svg' %}#icon-material"></use></svg> Material: </th>

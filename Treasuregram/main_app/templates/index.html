@@ -8,7 +8,7 @@
                 {% for treasure in treasures %}
                     <a class="treasure-item" href="/{{ treasure.id }}/">
                         <h2 class="panel-heading">{{ treasure.name }}</h2>
-                        <img class="treasure-image" src="{{ treasure.img_url }}" width="150" height="150">
+                        <img class="treasure-image" src="{{ treasure.image.url }}" width="150" height="150">
                     </a>
                 {% if forloop.counter|divisibleby:3 %}
                 </div>
