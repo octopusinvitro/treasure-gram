@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+            <div class="panel">
+                <h2 class="form-heading">Add a new treasure</h2>
+                <form class="treasure-form" action="post_url/" method="post">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <input class="treasure-button" type="submit" value="Submit">
+                </form>
+            </div>
+
+{% endblock %}

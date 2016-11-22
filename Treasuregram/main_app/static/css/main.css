@@ -209,6 +209,57 @@ a.treasure-item {
   margin-right: 1em;
 }
 
+.form-heading {
+  padding: 1em;
+}
+
+.treasure-form {
+  padding: 0 2em 1em;
+}
+
+.treasure-form label,
+.treasure-form input {
+  padding: .5em 1em;
+}
+
+.treasure-form label {
+  display: inline-block;
+  width: 6em;
+}
+
+.treasure-form input {
+  display: inline-block;
+  max-width: 90%;
+  background-color: #FBF8ED;
+  outline: 0;
+  border: .2em solid #F1E9D7;
+  border-radius: .5em;
+  transition: border-color .5s;
+}
+
+.treasure-form input:focus {
+  border-color:   #DBC4A9;
+}
+
+input.treasure-button,
+a.treasure-button {
+  padding: 1em;
+  font-family: 'Gentium Basic', serif;
+  border-radius: 1em;
+  background-color: #DBC4A9;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.add-more {
+  display: block;
+  max-width: 10em;
+  text-decoration: none;
+  text-align: center;
+  margin: 1em auto;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
