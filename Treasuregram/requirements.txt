@@ -1,0 +1,6 @@
+# List all Python package requirements this project has.
+# Generated with 'pip freeze > requirements.txt'
+# more details: https://pip.pypa.io/en/latest/user_guide/#requirements-files
+
+Django==1.10.3
+Pillow==3.4.2
