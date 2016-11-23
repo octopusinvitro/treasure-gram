@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from .models import Treasure
@@ -56,3 +57,15 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+
+def like_treasure(request):
+    treasure_id = request.GET.get('treasure_id', None)
+    likes = 0
+    if (treasure_id):
+        treasure = Treasure.objects.get(id=int(treasure_id))
+        if treasure is not None:
+            treasure.likes += 1
+            likes = treasure.likes
+            treasure.save()
+    return HttpResponse(likes)

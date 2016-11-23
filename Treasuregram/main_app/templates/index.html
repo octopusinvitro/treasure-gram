@@ -12,6 +12,12 @@
                             <img class="treasure-image" src="{{ treasure.image.url }}" width="150" height="150">
                         </a>
                         <a class="treasure-user" href="/user/{{ treasure.user.username }}">by: {{ treasure.user.username }}</a>
+                        <button class="treasure-button" data-id="{{ treasure.id }}" type="button">
+                            <svg aria-hidden="true" class="treasure-icon"><use xlink:href="/static/images/site-icons.svg#icon-heart"></use></svg>
+                            {% if treasure.likes > 0 %}
+                                {{ treasure.likes }}
+                            {% endif %}
+                        </button>
                     </div>
                 {% if forloop.counter|divisibleby:3 %}
                 </div>

@@ -28,5 +28,11 @@
                         </tr>
                     </table>
                 </div>
+                <button class="treasure-button" data-id="{{ treasure.id }}" type="button">
+                    <svg aria-hidden="true" class="treasure-icon"><use xlink:href="/static/images/site-icons.svg#icon-heart"></use></svg>
+                    {% if treasure.likes > 0 %}
+                        {{ treasure.likes }}
+                    {% endif %}
+                </button>
             </div>
 {% endblock %}
