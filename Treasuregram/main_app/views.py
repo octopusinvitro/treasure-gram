@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.shortcuts import HttpResponseRedirect
+from django.http import HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from .models import Treasure
 from .forms import TreasureForm
+from .forms import LoginForm
 
 
 def index(request):
@@ -34,3 +36,18 @@ def profile(request, username):
     treasures = Treasure.objects.filter(user=user)
     return render(request, 'profile.html', {
         'user': user, 'treasures': treasures})
+
+
+def login_view(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user     = authenticate(username=username, password=password)
+            if user is not None and user.is_active:
+                login(request, user)
+                return HttpResponseRedirect('/')
+    else:
+        form = LoginForm()
+        return render(request, 'login.html', {'form': form})

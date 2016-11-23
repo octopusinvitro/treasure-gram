@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^add/$', views.add_treasure, name='add_treasure'),
     url(r'^add/post_url/$', views.post_treasure, name='post_treasure'),
     url(r'^user/(\w+)/$', views.profile, name='profile'),
+    url(r'^login/$', views.login_view, name='login'),
 ]
 
 if settings.DEBUG:
