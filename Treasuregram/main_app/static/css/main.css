@@ -106,7 +106,7 @@ img {
 }
 
 .site-main {
-  max-width: 70%;
+  max-width: 95%;
   margin: 1em auto;
   padding-bottom: 1em;
   background-color: #EEDCBC;
@@ -115,7 +115,7 @@ img {
 }
 
 .site-navigation {
-  padding: 2em 0;
+  padding: 2em 0 0;
   text-align: center;
   background-color: #FBF8ED;
   border-radius: 1em 1em 0 0;
@@ -123,6 +123,20 @@ img {
 
 .site-navigation img {
   border-radius: 1em;
+}
+
+.authentication {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.authentication a {
+  padding: 1em 2em;
+  font-size: .9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .3ssem;
+  color: #DBC4A9;
 }
 
 .site-title {
@@ -365,6 +379,10 @@ a.treasure-button {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
+  .site-main {
+    max-width: 70%;
+  }
+
   .treasure-row {
     display: flex;
     justify-content: space-around;

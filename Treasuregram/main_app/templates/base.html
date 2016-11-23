@@ -20,13 +20,23 @@
         <![endif]-->
 
         <main role="main" class="site-main">
-            <nav class="site-navigation">
-                <a href="/">
-                  <img src="{% static 'images/logo.jpg' %}" alt="TreasureGram logo">
-                </a>
-            </nav>
+            <header>
+                <nav class="site-navigation">
+                    <a href="/">
+                      <img src="{% static 'images/logo.jpg' %}" alt="TreasureGram logo">
+                    </a>
+                    <div class="authentication">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'profile' user.username %}">{{ user.username }}</a>
+                    <a href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    <a href="/login/">Login</a>
+                    {% endif %}
+                    </div>
+                </nav>
 
-            <h1 class="site-title">TreasureGram</h1>
+                <h1 class="site-title">TreasureGram</h1>
+            </header>
             {% block content %}
             {% endblock %}
         </main>
