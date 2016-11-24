@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/octopusinvitro/treasure-gram.svg?branch=master)](https://travis-ci.org/octopusinvitro/treasure-gram)
+[![build status](https://gitlab.com/octopusinvitro/treasure-gram/badges/master/build.svg)](https://gitlab.com/octopusinvitro/treasure-gram/commits/master)
+
+
 # Treasure Gram
 
 ![Screenshot](screenshot.png)
@@ -7,7 +11,7 @@ A project to play with Django.
 This project was created with Python 3.4 and Django 1.10.0.
 
 
-## To run the site locally
+## Install
 
 Clone the repo and install all dependencies:
 
@@ -16,17 +20,17 @@ cd treasure-gram/Treasuregram
 pip install -r requirements.txt
 ```
 
-Run the migrations:
+## Run the migrations:
 
 ```bash
-python manage.py makemigrations
-python manage.py migrate
+python3 manage.py makemigrations
+python3 manage.py migrate
 ```
 
 Then start the server:
 
 ```bash
-python manage.py runserver
+python3 manage.py runserver
 ```
 
 And go to <http://localhost:8000/>
@@ -47,3 +51,4 @@ And go to <http://localhost:8000/>
 * User pages
 * User authentication
 * AJAX communicating with views
+* Continuous Integration for Travis and gitlab-ci

@@ -1,0 +1,13 @@
+image: python:3.4
+
+all_tests:
+  script:
+   - cd Treasuregram
+   - pip install -U pip
+   - pip install -r requirements.txt
+   - pip freeze
+   - python3 manage.py makemigrations
+   - python3 manage.py migrate
+  when: on_success
+  only:
+    - dev
