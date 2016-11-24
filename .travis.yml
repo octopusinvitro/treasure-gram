@@ -15,8 +15,11 @@ install:
   - cd Treasuregram
   - pip install -U pip
   - pip install -r requirements.txt
+  - pip install flake8
   - pip freeze
   - python3 manage.py makemigrations
   - python3 manage.py migrate
 # command to run tests
-# script: pytest
+script:
+  - python3 manage.py test
+  - flake8 --ignore E221,E501 .

@@ -27,7 +27,13 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
-Then start the server:
+## Run the tests
+
+```
+python3 manage.py test
+```
+
+## Start the server:
 
 ```bash
 python3 manage.py runserver
@@ -51,4 +57,5 @@ And go to <http://localhost:8000/>
 * User pages
 * User authentication
 * AJAX communicating with views
+* Tests with unittest
 * Continuous Integration for Travis and gitlab-ci

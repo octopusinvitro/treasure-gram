@@ -5,9 +5,12 @@ all_tests:
    - cd Treasuregram
    - pip install -U pip
    - pip install -r requirements.txt
+   - pip install flake8
    - pip freeze
    - python3 manage.py makemigrations
    - python3 manage.py migrate
+   - python3 manage.py test
+   - flake8 --ignore E221,E501 .
   when: on_success
   only:
     - dev
