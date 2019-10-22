@@ -3,4 +3,4 @@
 # more details: https://pip.pypa.io/en/latest/user_guide/#requirements-files
 
 Django==1.10.3
-Pillow==3.4.2
+Pillow==6.2.0
