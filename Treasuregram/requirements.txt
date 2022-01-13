@@ -2,5 +2,5 @@
 # Generated with 'pip freeze > requirements.txt'
 # more details: https://pip.pypa.io/en/latest/user_guide/#requirements-files
 
-Django==2.2.24
+Django==2.2.26
 Pillow==9.0.0
